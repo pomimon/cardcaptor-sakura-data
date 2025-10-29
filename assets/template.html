@@ -5,26 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cardcaptor Cards</title>
   <style>
+  :root {
+    --container-padding: 16px;
+    --container-gap: 25px;
+
+    --image-w: 1720px;
+    --image-h: 3792px;
+    --ratio: 6;
+
+    --card-back-image: url("./assets/CCS_Clow_Card_Back.webp");
+
+    --cosmic-cream: #FFF8E7;
+  }
+
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  :root {
-    --container-padding: 16px;
-    --container-gap: 16px;
-
-    --image-w: 1720px;
-    --image-h: 3792px;
-    --ratio: 6;
-
-    --card-back-image: url("./assets/CCS_Clow_Card_Back.webp");;
-  }
-
   html,
   body {
     margin: 0;
+  }
+
+  body {
+    background-color: var(--cosmic-cream);
   }
 
   img {
@@ -39,7 +45,8 @@
 
   .header {
     height: 270px;
-    margin-bottom: calc(var(--container-gap) * 2);
+    margin-bottom: calc(var(--container-padding) * 6);
+    margin-top: calc(var(--container-padding) * 4);
   }
 
   .brand {
@@ -66,6 +73,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     perspective: 3000px;
+
     &:hover .card-inner {
       transform: rotateY(180deg);
     }
@@ -89,7 +97,7 @@
 
   .card-back {
     align-items: center;
-    color: white;
+/*    color: white;*/
     display: flex;
     flex-direction: column;
     font-size: 1.25em;
@@ -116,7 +124,6 @@
       border-radius: 18px;
     }
   }
-
   </style>
 </head>
 <body>
