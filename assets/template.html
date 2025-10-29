@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cardcaptor Cards</title>
+  <style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --container-padding: 16px;
+    --container-gap: 16px;
+
+    --image-w: 1720px;
+    --image-h: 3792px;
+    --ratio: 6;
+
+    --card-back-image: url("./assets/CCS_Clow_Card_Back.webp");;
+  }
+
+  html,
+  body {
+    margin: 0;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    column-gap: var(--container-gap);
+    row-gap: var(--container-gap);
+  }
+
+  .logo {
+
+  }
+
+  .card {
+    background-color: transparent;
+    flex-basis: calc(var(--image-w) / var(--ratio));
+    height: calc(var(--image-h) / var(--ratio));
+    flex-grow: 0;
+    flex-shrink: 0;
+    perspective: 3000px;
+    &:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .card-inner {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card-back {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+    font-weight: 700;
+    justify-content: center;
+    padding: 26px;
+    text-align: center;
+    text-shadow: 2px 6px 4px black;
+    transform: rotateY(180deg);
+
+    &::before {
+      --bg-color: rgb(0 0 0 / 0.26);
+      --bg-gradient: linear-gradient(0deg, var(--bg-color), var(--bg-color));
+
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: var(--bg-gradient), var(--card-back-image);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+      border-radius: 18px;
+    }
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+  {{content}}
+</div>
+</body>
+</html>
