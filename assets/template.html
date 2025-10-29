@@ -33,17 +33,30 @@
   }
 
   .container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .header {
+    height: 270px;
+    margin-bottom: calc(var(--container-gap) * 2);
+  }
+
+  .brand {
+    height: 100%;
+    text-align: center;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
     column-gap: var(--container-gap);
     row-gap: var(--container-gap);
-  }
-
-  .logo {
-
   }
 
   .card {
@@ -103,11 +116,20 @@
       border-radius: 18px;
     }
   }
+
   </style>
 </head>
 <body>
 <div class="container">
-  {{content}}
+  <header class="header">
+    <div class="brand">
+      <img src="./assets/ccs-logo.svg">
+    </div>
+  </header>
+
+  <main class="cards">
+    {{content}}
+  </main>
 </div>
 </body>
 </html>
