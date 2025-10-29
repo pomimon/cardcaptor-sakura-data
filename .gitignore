@@ -11,3 +11,7 @@ wheels/
 
 # Project files
 *.sqlite
+
+assets/images/
+assets/*.json
+index.html
