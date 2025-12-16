@@ -1,8 +1,9 @@
-from bs4 import BeautifulSoup
-import requests
-import pprint
 import json
 import os
+import pprint
+
+import requests
+from bs4 import BeautifulSoup
 
 URL = "https://ccsakura.fandom.com"
 

@@ -1,4 +1,6 @@
 import json
+import os
+
 
 def formatList(value: list[str]) -> str:
     return " 🥚 ".join(value)

@@ -1,11 +1,14 @@
 import json
-from pony.orm import set_sql_debug
-from pony.orm import Database
-from pony.orm import Optional
-from pony.orm import Required
-from pony.orm import db_session
-from pony.orm import commit
-from pony.orm import Set
+
+from pony.orm import (
+  Database,
+  Optional,
+  Required,
+  Set,
+  commit,
+  db_session,
+  set_sql_debug,
+)
 
 SRC_PATH = "./assets/Clow_Cards.json"
 DST_PATH = "./cards.sqlite"

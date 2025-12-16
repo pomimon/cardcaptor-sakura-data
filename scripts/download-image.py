@@ -1,6 +1,8 @@
 import json
-import requests
 import os
+
+import requests
+
 
 def main():
     with open('./assets/Clow_Cards.json') as jsonfile:
