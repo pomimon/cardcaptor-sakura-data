@@ -15,3 +15,4 @@ wheels/
 assets/images/
 assets/*.json
 index.html
+generate-ai-image.py
